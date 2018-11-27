@@ -4,10 +4,29 @@ class Counter extends Component {
   render() {
     return (
       <div>
+        <h1>{this.props.counter.product.name}</h1>
         <span className={"badge badge-" + this.getBadgeClass() + " m-2"}>
           {this.formatCount()}
         </span>
-        <button
+        <div class="button_group">
+          <button
+            id="subtract"
+            onClick={() => this.props.onDecrement(this.props.counter)}
+          >
+            -
+          </button>
+          <button id="reset">{this.formatCount()}</button>
+          <button
+            id="add"
+            onClick={() => this.props.onIncrement(this.props.counter)}
+          >
+            +
+          </button>
+          <button onClick={() => this.props.onDelete(this.props.counter.id)}>
+            Delete
+          </button>
+        </div>
+        {/* <button
           onClick={() => this.props.onIncrement(this.props.counter)}
           className="btn btn-success btn-sm"
         >
@@ -18,7 +37,7 @@ class Counter extends Component {
           className="btn btn-danger btn-sm m-2 "
         >
           Delete
-        </button>
+        </button> */}
       </div>
     );
   }

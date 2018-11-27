@@ -18,3 +18,41 @@
 .cart-right.open {
   transform: translateX(0);
 }
+
+/* ADD BUTTON */
+.button_group {
+  width: 100%;
+  display: flex;
+}
+.button_group > button {
+  font-family: "Oswald", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 0;
+  padding: 0.1em 0.2em;
+  margin: 0.5em 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-transition: 0.2s;
+}
+.button_group > button:nth-child(2) {
+  margin: 0.5em;
+}
+.button_group > button:nth-child(3) {
+  margin-right: 0.5em;
+}
+.button_group > button:nth-child(4) {
+  background-color: #dc3545;
+}
+.button_group > button:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+.button_group > button:active {
+  background: rgba(0, 0, 0, 0.5);
+}
+.button_group > #add:active {
+  -webkit-transform: translateY(-0.3em);
+}
+.button_group > #subtract:active {
+  -webkit-transform: translateY(0.3em);
+}

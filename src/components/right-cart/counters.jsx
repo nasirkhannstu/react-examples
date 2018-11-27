@@ -4,7 +4,14 @@ import "./Counters.css";
 
 class Counters extends Component {
   render() {
-    const { onReset, counters, onDelete, onIncrement, show } = this.props;
+    const {
+      onReset,
+      counters,
+      onDelete,
+      onIncrement,
+      onDecrement,
+      show
+    } = this.props;
     let drawerClass = "cart-right";
     if (show) {
       drawerClass = "cart-right open";
@@ -22,6 +29,7 @@ class Counters extends Component {
                   key={counter.id}
                   onDelete={onDelete}
                   onIncrement={onIncrement}
+                  onDecrement={onDecrement}
                   counter={counter}
                 />
               ))}
