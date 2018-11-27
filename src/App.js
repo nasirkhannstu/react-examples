@@ -5,14 +5,16 @@ import Backdrop from "./components/backdrop/Backdrop";
 import Products from "./components/products/Products.js";
 import "./App.css";
 
+// https://medium.com/@_mariacheline/deploy-create-react-app-project-to-github-pages-2eb6deda5b89
+
 class App extends Component {
   state = {
     counters: [],
     products: [
-      { id: 1, name: "Womens Designer Top", price: 599.99 },
-      { id: 2, name: "Women's Yellow Top", price: 349.99 },
-      { id: 3, name: "Blue - Red Top", price: 449.99 },
-      { id: 4, name: "Women's Red Top", price: 139.99 }
+      { id: 1, name: "Womens Designer Top", price: 599.99, image: "a.jpg" },
+      { id: 2, name: "Women's Yellow Top", price: 349.99, image: "b.jpg" },
+      { id: 3, name: "Blue - Red Top", price: 449.99, image: "c.jpg" },
+      { id: 4, name: "Women's Red Top", price: 139.99, image: "d.jpg" }
     ],
     imageUrl: "https:picsum.photos/200/?random",
     sideDrawerOpen: false

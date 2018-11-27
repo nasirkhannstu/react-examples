@@ -8,8 +8,14 @@ class Product extends Component {
         <div className="product-grid2">
           <div className="product-image2">
             <a href="#">
-              <img className="pic-1" src="https:picsum.photos/200/300" />
-              <img className="pic-2" src="https:picsum.photos/200/300" />
+              <img
+                className="pic-1"
+                src={require(`../../img/${product.image}`)}
+              />
+              <img
+                className="pic-2"
+                src={require(`../../img/${product.image}`)}
+              />
             </a>
             <ul className="social">
               <li>
@@ -23,7 +29,11 @@ class Product extends Component {
                 </a>
               </li>
               <li>
-                <a href="#" data-tip="Add to Cart">
+                <a
+                  onClick={() => onAdd(product)}
+                  href="#"
+                  data-tip="Add to Cart"
+                >
                   <i className="fa fa-shopping-cart" />
                 </a>
               </li>

@@ -2,6 +2,7 @@
   "name": "counter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://nasirkhannstu.github.io/react-examples",
   "dependencies": {
     "bootstrap": "^4.1.3",
     "react": "^16.6.3",
