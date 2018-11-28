@@ -7,7 +7,7 @@ class Products extends Component {
     const { products, onAdd } = this.props;
     return (
       <div className="container">
-        <h3 className="h3">shopping Demo-2 </h3>
+        <h3 className="h3">Products & cart Without Redux </h3>
         <div className="row">
           {products.map(product => (
             <Product product={product} onAdd={onAdd} />
