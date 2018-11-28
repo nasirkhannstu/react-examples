@@ -4,7 +4,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.counter.product.name}</h1>
+        <h5>{this.props.counter.product.name}</h5>
         <span className={"badge badge-" + this.getBadgeClass() + " m-2"}>
           {this.formatCount()}
         </span>

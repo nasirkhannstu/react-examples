@@ -3,21 +3,25 @@ import NavBar from "./components/navbar";
 import Counters from "./components/right-cart/counters";
 import Backdrop from "./components/backdrop/Backdrop";
 import Products from "./components/products/Products.js";
+import SweetAlert from "react-bootstrap-sweetalert";
 import "./App.css";
 
 // https://medium.com/@_mariacheline/deploy-create-react-app-project-to-github-pages-2eb6deda5b89
+
+// Load Dynamic Component https://www.youtube.com/watch?v=Qqgm170PZwk
 
 class App extends Component {
   state = {
     counters: [],
     products: [
-      { id: 1, name: "Womens Designer Top", price: 599.99, image: "a.jpg" },
-      { id: 2, name: "Women's Yellow Top", price: 349.99, image: "b.jpg" },
-      { id: 3, name: "Blue - Red Top", price: 449.99, image: "c.jpg" },
-      { id: 4, name: "Women's Red Top", price: 139.99, image: "d.jpg" }
+      { id: 1, name: "Stylish Headphone", price: 599.99, image: "a.jpg" },
+      { id: 2, name: "Black Headphone", price: 349.99, image: "b.jpg" },
+      { id: 3, name: "Red - Black Headphone", price: 449.99, image: "c.jpg" },
+      { id: 4, name: "White Headphone", price: 139.99, image: "d.jpg" }
     ],
     imageUrl: "https:picsum.photos/200/?random",
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+    alert: null
   };
   handleAdd = product => {
     const hasIndex = this.state.counters.findIndex(
@@ -32,7 +36,21 @@ class App extends Component {
       const counters = [productAdd, ...this.state.counters];
       this.setState({ counters: counters, sideDrawerOpen: true });
       console.log(this.state.counters);
+    } else {
+      const message = (
+        <SweetAlert
+          success
+          title="You already Add this."
+          onConfirm={this.hideAlert}
+        />
+      );
+      this.setState({ alert: message });
     }
+  };
+  hideAlert = () => {
+    this.setState({
+      alert: null
+    });
   };
   drawerToggleClickHandler = () => {
     this.setState(prevState => {
@@ -89,6 +107,7 @@ class App extends Component {
           show={this.state.sideDrawerOpen}
           drawerClickHandler={this.drawerToggleClickHandler}
         />
+        {this.state.alert}
       </div>
     );
   }
